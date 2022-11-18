@@ -36,12 +36,12 @@ namespace WebsiteThreeHShop.Controllers
         public ActionResult Sanphamnoibat()
         {
             var sp = from n in data.SANPHAMs select n;
-            return PartialView(sp.Take(5));
+            return PartialView(sp.Take(8));
         }
         public ActionResult Sanphammoi()
         {
-            var sp = from n in data.SANPHAMs where n.MALSP == 4 select n;
-            return PartialView(sp.Take(5));
+            var sp = from n in data.SANPHAMs where n.MALSP == 6 select n;
+            return PartialView(sp.Take(8));
         }
     }
 }

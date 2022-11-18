@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+
+    <link href="~/Content/Loginadmincss.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="login-box">
+        <h2>Login</h2>
+        <h2>@ViewBag.Thongbao</h2>
+        @using (Html.BeginForm("Login", "Home"))
+        {
+            <div class="user-box">
+                <input type="text" name="tendangnhap" required="">
+                <label>Username</label>
+            </div>
+            <div class="user-box">
+                <input type="password" name="matkhau" required="">
+                <label>Password</label>
+            </div>
+            <div class="a"><input type="submit" name="submit" value="Đăng nhập" /></div>
+        }
+    </div>
+</body>
+</html>
+<style>
+    .a {
+        text-align: center;
+        color: black;
+    }
+</style>
