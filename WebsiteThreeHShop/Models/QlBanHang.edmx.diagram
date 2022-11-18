@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="1c7e5a6803f34157bc24e3cdde411d87" Name="Diagram1">
+      <Diagram DiagramId="e4548aa2671f4b86ab5cdeeac3d8b291" Name="Diagram1">
         <EntityTypeShape EntityType="QUANLYBANHANGModel.ADMIN" Width="1.5" PointX="5.25" PointY="13.625" IsExpanded="true" />
         <EntityTypeShape EntityType="QUANLYBANHANGModel.CHAT" Width="1.5" PointX="7.5" PointY="9.875" IsExpanded="true" />
         <EntityTypeShape EntityType="QUANLYBANHANGModel.CHITIETKHUYENMAI" Width="1.5" PointX="5.25" PointY="2.625" IsExpanded="true" />
@@ -16,19 +16,18 @@
         <EntityTypeShape EntityType="QUANLYBANHANGModel.LIENHE" Width="1.5" PointX="7.75" PointY="1.625" IsExpanded="true" />
         <EntityTypeShape EntityType="QUANLYBANHANGModel.LOAISANPHAM" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="QUANLYBANHANGModel.SANPHAM" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
-        <EntityTypeShape EntityType="QUANLYBANHANGModel.sysdiagram" Width="1.5" PointX="9.75" PointY="1.625" IsExpanded="true" />
         <EntityTypeShape EntityType="QUANLYBANHANGModel.THANHTOAN" Width="1.5" PointX="7.5" PointY="5.75" IsExpanded="true" />
-        <AssociationConnector Association="QUANLYBANHANGModel.FK__CHAT__MAAD__4E88ABD4" ManuallyRouted="false" />
-        <AssociationConnector Association="QUANLYBANHANGModel.FK__HOADON__MAADM__571DF1D5" ManuallyRouted="false" />
-        <AssociationConnector Association="QUANLYBANHANGModel.FK__CHAT__MAKH__4D94879B" ManuallyRouted="false" />
-        <AssociationConnector Association="QUANLYBANHANGModel.FK__CHITIETKHU__MAKM__5441852A" ManuallyRouted="false" />
-        <AssociationConnector Association="QUANLYBANHANGModel.FK__CHITIETKHU__MASP__534D60F1" ManuallyRouted="false" />
-        <AssociationConnector Association="QUANLYBANHANGModel.FK__SANPHAM__MADM__403A8C7D" ManuallyRouted="false" />
-        <AssociationConnector Association="QUANLYBANHANGModel.FK__GIOHANG__MASP__4316F928" ManuallyRouted="false" />
-        <AssociationConnector Association="QUANLYBANHANGModel.FK__THANHTOAN__MAGH__45F365D3" ManuallyRouted="false" />
-        <AssociationConnector Association="QUANLYBANHANGModel.FK__HOADON__MAKH__5812160E" ManuallyRouted="false" />
-        <AssociationConnector Association="QUANLYBANHANGModel.FK__THANHTOAN__MAKH__46E78A0C" ManuallyRouted="false" />
-        <AssociationConnector Association="QUANLYBANHANGModel.FK__SANPHAM__MALSP__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="QUANLYBANHANGModel.FK__CHAT__MAAD__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="QUANLYBANHANGModel.FK__HOADON__MAADM__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="QUANLYBANHANGModel.FK__CHAT__MAKH__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="QUANLYBANHANGModel.FK__CHITIETKHU__MAKM__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="QUANLYBANHANGModel.FK__CHITIETKHU__MASP__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="QUANLYBANHANGModel.FK__SANPHAM__MADM__2E1BDC42" ManuallyRouted="false" />
+        <AssociationConnector Association="QUANLYBANHANGModel.FK__GIOHANG__MASP__30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="QUANLYBANHANGModel.FK__THANHTOAN__MAGH__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="QUANLYBANHANGModel.FK__HOADON__MAKH__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="QUANLYBANHANGModel.FK__THANHTOAN__MAKH__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="QUANLYBANHANGModel.FK__SANPHAM__MALSP__2D27B809" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

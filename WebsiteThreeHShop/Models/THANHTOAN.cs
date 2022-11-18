@@ -18,7 +18,7 @@ namespace WebsiteThreeHShop.Models
         public Nullable<int> MAGH { get; set; }
         public Nullable<int> MASP { get; set; }
         public Nullable<int> MAKH { get; set; }
-        public decimal GIACA { get; set; }
+        public Nullable<double> GIACA { get; set; }
         public string PHUONGTHUCTHANHTOAN { get; set; }
         public System.DateTime NGAYTHANHTOAN { get; set; }
     

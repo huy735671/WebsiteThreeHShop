@@ -39,7 +39,7 @@
                             </th>
                             <th align="center" style="padding:10px 10px">@string.Format("{0:#,##0,0}", @item.dTHANHTIEN)</th>
                             //   <td style="padding:10px 20px"><a href="@Url.Action("ChiTietSanPham","Webbangamedemo", new {id = item.iMASP})">Chi tiết</a></td>
-                            <th style="padding:10px 20px;">@Html.ActionLink("Xóa", "XoaGioHang", new { @iMASP = item.iMASP })</th>
+                            <th style="padding:10px 20px;">@Html.ActionLink("Xóa", "XoaSPKhoiGioHang", new { @iMASP = item.iMASP })</th>
                             <th style="padding-left:10px;padding-right:10px">
                                 <input type="submit" value=" Cập nhật" />
                             </th>

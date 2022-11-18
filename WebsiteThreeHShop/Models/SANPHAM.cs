@@ -23,7 +23,7 @@ namespace WebsiteThreeHShop.Models
         public int MASP { get; set; }
         public string TENSP { get; set; }
         public string NOIDUNGTT { get; set; }
-        public Nullable<decimal> GIACA { get; set; }
+        public Nullable<double> GIACA { get; set; }
         public string HINHMINHHOA { get; set; }
         public int MALSP { get; set; }
         public int MADM { get; set; }

@@ -36,7 +36,6 @@ namespace WebsiteThreeHShop.Models
         public virtual DbSet<LIENHE> LIENHEs { get; set; }
         public virtual DbSet<LOAISANPHAM> LOAISANPHAMs { get; set; }
         public virtual DbSet<SANPHAM> SANPHAMs { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<THANHTOAN> THANHTOANs { get; set; }
     }
 }
