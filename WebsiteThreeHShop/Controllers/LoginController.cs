@@ -4,7 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebsiteThreeHShop.Models;
-
+using Microsoft.Web.Infrastructure;
+using System.Web.Razor;
+using System.Web.WebPages.Deployment;
+using System.Web.WebPages.Razor;
 namespace WebsiteThreeHShop.Controllers
 {
     public class LoginController : Controller
