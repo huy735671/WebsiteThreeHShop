@@ -1,0 +1,13 @@
+﻿@using WebsiteThreeHShop.Models;
+@model List<GioHang>
+@{
+    ViewBag.Title = "GioHangPartial";
+    Layout = null;
+}
+<a href="@Url.Action("GioHang","GioHang")" style="color:white; font-weight:bold; text-decoration:none">
+    <i class="fa fa-shopping-cart">
+        (@ViewBag.TongSoLuong)
+    </i>
+</a>
+
+

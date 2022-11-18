@@ -1,0 +1,93 @@
+﻿@using WebsiteThreeHShop.Models
+@model List<GioHang>
+@{
+    ViewBag.Title = "GioHang";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="text-align: center;">
+    THÔNG TIN GIỎ HÀNG
+</h2>
+<div class="tableCard row mt-4">
+    <div class="card col-md-8 mr-5">
+        <div class="card-body">
+            <table class="table table-responsive table-bordered">
+
+                <thead>
+                    <tr>
+                        <th>Sản phẩm</th>
+                        <th>Tên sản phẩm</th>
+                        <th>Giá</th>
+                        <th>Số lượng</th>
+                        <th>Tổng tiền</th>
+                        <th>Xóa</th>
+                        <th style="padding-left:10px; padding-right:10px">Cập nhật sản phẩm</th>
+                    </tr>
+                </thead>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <th style="width:250px; height:200px"><img src="~/Content/imgweb/@item.sHINHMINHHOA" style="width:100%"></th>
+                        <th>@item.sTENSP</th>
+
+                        @using (Html.BeginForm("CapNhatGioHang","GioHang", new { iMASP = item.iMASP }))
+                        {
+
+                            <th align="center" style="padding:10px 10px">@string.Format("{0:#,##0,0}", @item.dGIACA)</th>
+                            <th align="center">
+                                <input type="number" min="1" name="txtSOLUONG" value="@item.iSOLUONG" style="background-color:none" />
+                            </th>
+                            <th align="center" style="padding:10px 10px">@string.Format("{0:#,##0,0}", @item.dTHANHTIEN)</th>
+                            //   <td style="padding:10px 20px"><a href="@Url.Action("ChiTietSanPham","Webbangamedemo", new {id = item.iMASP})">Chi tiết</a></td>
+                            <th style="padding:10px 20px;">@Html.ActionLink("Xóa", "XoaGioHang", new { @iMASP = item.iMASP })</th>
+                            <th style="padding-left:10px;padding-right:10px">
+                                <input type="submit" value=" Cập nhật" />
+                            </th>
+
+                        }
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+    <div class="card col-md-3">
+        <div class="card-body">
+            <h5 class="mb-3">Tổng số tiền</h5>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                    Số tiền tạm thời
+                    <span>@string.Format("{0:#,##0}", @ViewBag.TongTien)</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                    Thuế VAT:
+                    <span>@string.Format("{0:#,##0}", @ViewBag.TongVAT)</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                    Tổng số lượng:
+                    <span>@string.Format("{0:#,##0}", @ViewBag.TongSoLuong)</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                    @ViewBag.thongbao
+                    @using (Html.BeginForm("khuyenmai1", "GioHang"))
+                    {
+                        <input type="text" name="makhuyenmai" placeholder="nhập mã khuyến mãi">
+                        <input type="submit" name="su">
+                    }
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+                    <div>
+                        <strong>Tổng số tiền</strong>
+                        <strong>
+                            <p class="mb-0">(Bao gồm VAT)</p>
+                        </strong>
+                    </div>
+                    <span><strong>@string.Format("{0:#,##0}", @ViewBag.TongTienVAT) VNĐ</strong></span>
+                </li>
+            </ul>
+            <a href="checkout.html" style="color: green;" class="btn btn-outline-success btn-block waves-effect waves-light">
+                Tiếp tục thanh toán
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,63 @@
+﻿
+
+@{
+    ViewBag.Title = "Dangnhap";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạo Trang Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="~/Content/Stylelogin2.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <section>
+        <!--Bắt Đầu Phần Hình Ảnh-->
+        <!--Kết Thúc Phần Hình Ảnh-->
+        <!--Bắt Đầu Phần Nội Dung-->
+        <div class="img-bg">
+            <img src="https://niemvuilaptrinh.ams3.cdn.digitaloceanspaces.com/tao_trang_dang_nhap/hinh_anh_minh_hoa.jpg" alt="Hình Ảnh Minh Họa">
+        </div>
+        <div class="noi-dung">
+            <div class="form">
+                <h2>Trang Đăng Nhập</h2>
+
+                @using (Html.BeginForm("Dangnhap", "Login"))
+                {
+                    <span>@ViewBag.ThongBao</span>
+                    <div class="input-form">
+                        <span>Tên Người Dùng</span>
+                        <input type="text" name="TenDN" placeholder="Tên đăng nhập" required="">
+                    </div>
+                    <div class="input-form">
+                        <span>Mật Khẩu</span>
+                        <input type="password" name="Matkhau" placeholder="Mật khẩu" required="">
+                    </div>
+                    <div class="nho-dang-nhap">
+                        <label><input type="checkbox" name=""> Nhớ Đăng Nhập</label>
+                    </div>
+                    <div class="input-form">
+                        <input type="submit" value="Đăng Nhập">
+                    </div>
+                    <div class="input-form">
+                        <p>Bạn Chưa Có Tài Khoản? <a href="@Url.Action("Dangky","Login")">Đăng Ký</a></p>
+                    </div>
+                }
+                <h3>Đăng Nhập Bằng Mạng Xã Hội</h3>
+                <ul class="icon-dang-nhap">
+                    <li><i class="fa fa-facebook" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-google" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-twitter" aria-hidden="true"></i></li>
+                </ul>
+            </div>
+        </div>
+        <!--Kết Thúc Phần Nội Dung-->
+    </section>
+</body>
+</html>

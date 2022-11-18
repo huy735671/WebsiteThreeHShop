@@ -1,0 +1,19 @@
+﻿@model IEnumerable<WebsiteThreeHShop.Models.DANHMUC>
+
+@{
+    ViewBag.Title = "DanhmucPartial";
+}
+
+
+
+@foreach (var item in Model)
+{
+
+    <a href="@Url.Action("Danhmuc","Sanpham", new { id = item.MADM})"
+       class="list-group-item">
+        <i class="fa  text-dark">
+            @item.TENDM
+        </i>
+
+    </a>
+}

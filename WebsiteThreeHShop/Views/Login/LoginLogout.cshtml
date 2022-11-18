@@ -1,0 +1,18 @@
+﻿@using WebsiteThreeHShop.Models
+@{ Layout = null; }
+@{
+    KHACHHANG kh = (KHACHHANG)Session["Taikhoan"];
+}
+
+
+@if (Session["Taikhoan"] == null)
+{
+    <li type="none"><a href="~/Login/Dangky"><span class="glyphicon glyphicon-user" style="font-size:13px;color:black">Đăng ký</span></a></li>
+    <li type="none"><a href="~/Login/Dangnhap?id=1"><span class="glyphicon glyphicon-user" style="font-size:13px;color:black">Đăng nhập</span></a></li>
+}
+else
+{
+    <li type="none"><a href="#"><span class="glyphicon glyphicon-user" style="font-size:13px;color:black">Xin chào:@kh.NAME</span></a></li>
+    <li type="none"><a href="@Url.Action("DangXuat","Login")"><span class="glyphicon glyphicon-user" style="font-size:13px;color:black">Đăng xuất</span> </a></li>
+}
+
