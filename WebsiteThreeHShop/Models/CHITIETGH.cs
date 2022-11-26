@@ -12,12 +12,13 @@ namespace WebsiteThreeHShop.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class CHITIETKHUYENMAI
+    public partial class CHITIETGH
     {
+        public int MAGH { get; set; }
         public int MASP { get; set; }
-        public Nullable<int> MAKM { get; set; }
+        public Nullable<int> SOLUONG { get; set; }
     
-        public virtual KHUYENMAI KHUYENMAI { get; set; }
+        public virtual GIOHANG GIOHANG { get; set; }
         public virtual SANPHAM SANPHAM { get; set; }
     }
 }

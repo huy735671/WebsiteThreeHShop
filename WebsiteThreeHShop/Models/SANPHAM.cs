@@ -17,7 +17,7 @@ namespace WebsiteThreeHShop.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public SANPHAM()
         {
-            this.GIOHANGs = new HashSet<GIOHANG>();
+            this.CHITIETGHs = new HashSet<CHITIETGH>();
         }
     
         public int MASP { get; set; }
@@ -28,10 +28,9 @@ namespace WebsiteThreeHShop.Models
         public int MALSP { get; set; }
         public int MADM { get; set; }
     
-        public virtual CHITIETKHUYENMAI CHITIETKHUYENMAI { get; set; }
-        public virtual DANHMUC DANHMUC { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<GIOHANG> GIOHANGs { get; set; }
+        public virtual ICollection<CHITIETGH> CHITIETGHs { get; set; }
+        public virtual DANHMUC DANHMUC { get; set; }
         public virtual LOAISANPHAM LOAISANPHAM { get; set; }
     }
 }

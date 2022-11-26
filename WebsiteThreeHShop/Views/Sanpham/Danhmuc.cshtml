@@ -1,9 +1,11 @@
-﻿@model IEnumerable<WebsiteThreeHShop.Models.SANPHAM>
-@using WebsiteThreeHShop.Models
+﻿
 @{
     ViewBag.Title = "Danhmuc";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@model PagedList.PagedList<WebsiteThreeHShop.Models.SANPHAM>
+@using PagedList.Mvc;
+@using PagedList;
 
 <!-- Breadcrumb Start -->
 <div class="container-fluid">
@@ -159,13 +161,13 @@
                                 <img class="img-fluid w-100" src="~/Content/imgweb/@sanpham.HINHMINHHOA" alt="">
                                 <div class="product-action">
                                     <a class="btn btn-outline-dark btn-square" href="@Url.Action("ThemGioHang","GioHang", new { msp =@sanpham.MASP, url = Request.Url.ToString()})"><i class="fa fa-shopping-cart"></i></a>
-                                    <a class="btn btn-outline-dark btn-square" href="@Url.Action("Chitietsanpham", "Sanpham", new {id=sanpham.MADM})"><i class="fa fa-search"></i></a>
+                                    <a class="btn btn-outline-dark btn-square" href="@Url.Action("Chitietsanpham", "Sanpham", new {id=sanpham.MASP})"><i class="fa fa-search"></i></a>
                                 </div>
                             </div>
                             <div class="text-center py-4">
-                                <a class="h6 text-decoration-none text-truncate" href="@Url.Action("Chitietsanpham", "Sanpham", new {id=sanpham.MADM})">@sanpham.TENSP</a>
+                                <a class="h6 text-decoration-none text-truncate" href="@Url.Action("Chitietsanpham", "Sanpham", new {id=sanpham.MASP})">@sanpham.TENSP</a>
                                 <div class="d-flex align-items-center justify-content-center mt-2">
-                                    <h5>@sanpham.GIACA VNĐ</h5><h6 class="text-muted ml-2"></h6>
+                                    <h5>@string.Format("{0:#,##0,0}", @sanpham.GIACA) VNĐ</h5><h6 class="text-muted ml-2"></h6>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-center mb-1">
                                     <small class="fa fa-star text-primary mr-1"></small>
@@ -186,15 +188,31 @@
 
 
 
-                <div class="col-12">
+                <div class="col-12" style="text-align:center">
                     <nav>
-                        <ul class="pagination justify-content-center">
-                            <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                        </ul>
+
+                        <div class="MenuTrang">
+                            @Html.PagedListPager(Model, page => Url.Action("Danhmuc", new { iMASP = ViewBag.MASP, page = page }))
+                        </div>
+                        <style>
+                            .MenuTrang {
+                                display: inline-block;
+                                text-align: center;
+                            }
+
+                                .MenuTrang a {
+                                    color: black;
+                                    float: left;
+                                    padding: 8px 16px;
+                                    text-decoration: none;
+                                }
+
+                                    .MenuTrang a:hover:not(.active) {
+                                        background-color: yellow;
+                                        color: black;
+                                        border-radius: 5px;
+                                    }
+                        </style>
                     </nav>
                 </div>
             </div>

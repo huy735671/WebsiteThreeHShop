@@ -18,10 +18,10 @@ namespace WebsiteThreeHShop.Models
         public Nullable<int> MAKH { get; set; }
         public Nullable<int> MAADM { get; set; }
         public Nullable<System.DateTime> NGAYLAPHD { get; set; }
-        public Nullable<double> GIACA { get; set; }
-        public Nullable<double> TONGSOTIEN { get; set; }
+        public Nullable<int> IDKM { get; set; }
     
         public virtual ADMIN ADMIN { get; set; }
         public virtual KHACHHANG KHACHHANG { get; set; }
+        public virtual KHUYENMAI KHUYENMAI { get; set; }
     }
 }

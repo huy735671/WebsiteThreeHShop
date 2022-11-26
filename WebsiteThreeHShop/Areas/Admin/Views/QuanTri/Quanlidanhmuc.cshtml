@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "Quanlidanhmuc";
+    Layout = "~/Views/Shared/_Layoutadmin.cshtml";
+}
+
+
+@using WebsiteThreeHShop.Models;
+@using PagedList.Mvc;
+@model PagedList.PagedList<WebsiteThreeHShop.Models.DANHMUC>
+
+
+@*<p>
+        @Html.ActionLink("Thêm mới", "Create")
+    </p>*@
+<table class="table">
+    <tr>
+        <td style="text-align: center; width: 100px">
+            Mã danh mục 
+        </td>
+        <td style="text-align: center; width: 100px">
+            Tên danh mục
+        </td>
+
+       
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td style="text-align:center;width:100px">@item.MADM </td>
+            <td style="text-align: center; width: 100px">@item.TENDM </td>
+
+            <td>
+                <a href="@Url.Action("Edit", new {id=item.MADM})" class="btn btn-warning"  role="button">Sửa</a>
+                <a href="@Url.Action("Details", new {id=item.MADM})" class="btn btn-danger"  role="button">Xóa</a>
+            </td>
+        </tr>
+    }
+
+</table>
+<div class="col-12" style="text-align:center">
+    <div class="MenuTrang">
+        @Html.PagedListPager(Model, page => Url.Action("Quanlidanhmuc", new { page = page }))
+    </div>
+    <style>
+        .MenuTrang {
+            display: inline-block;
+            text-align: center;
+        }
+
+            .MenuTrang a {
+                color: black;
+                float: left;
+                padding: 8px 16px;
+                text-decoration: none;
+            }
+
+                .MenuTrang a:hover:not(.active) {
+                    background-color: yellow;
+                    color: black;
+                    border-radius: 5px;
+                }
+    </style>
+</div>

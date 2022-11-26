@@ -1,0 +1,64 @@
+﻿@model IEnumerable<WebsiteThreeHShop.Models.SANPHAM>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layoutadmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TENSP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NOIDUNGTT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GIACA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HINHMINHHOA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DANHMUC.TENDM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LOAISANPHAM.TENLSP)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TENSP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NOIDUNGTT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GIACA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HINHMINHHOA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DANHMUC.TENDM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LOAISANPHAM.TENLSP)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MASP }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MASP }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MASP })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -46,20 +47,201 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Antiforgery, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Antiforgery.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Antiforgery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Authentication.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Authentication.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Authentication.Core.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Authentication.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authorization, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Authorization.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Authorization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authorization.Policy, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Authorization.Policy.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Authorization.Policy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Cryptography.Internal, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Cryptography.Internal.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Cryptography.Internal.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.DataProtection, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.DataProtection.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.DataProtection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.DataProtection.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.DataProtection.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.DataProtection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Diagnostics.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Diagnostics.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Diagnostics.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Hosting.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Hosting.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Hosting.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Hosting.Server.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Hosting.Server.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Html.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Html.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Html.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Http.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Http.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Extensions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Http.Extensions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Features, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Http.Features.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.Features.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.JsonPatch, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.JsonPatch.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.JsonPatch.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Mvc.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Mvc.Core.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.DataAnnotations, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Mvc.DataAnnotations.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.DataAnnotations.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Formatters.Json, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Mvc.Formatters.Json.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.Formatters.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.ViewFeatures, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Mvc.ViewFeatures.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.ViewFeatures.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.ResponseCaching.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.ResponseCaching.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Routing, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Routing.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Routing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Routing.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Routing.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Routing.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.WebUtilities, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.WebUtilities.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.WebUtilities.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.DotNet.PlatformAbstractions, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.DotNet.PlatformAbstractions.2.1.0\lib\net45\Microsoft.DotNet.PlatformAbstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.2.2.0\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyModel, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyModel.2.1.0\lib\net451\Microsoft.Extensions.DependencyModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileProviders.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.FileProviders.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Hosting.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Hosting.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Hosting.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Localization, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Localization.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Localization.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Localization.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Localization.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.ObjectPool, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.ObjectPool.2.2.0\lib\netstandard2.0\Microsoft.Extensions.ObjectPool.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.WebEncoders, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.WebEncoders.2.2.0\lib\netstandard2.0\Microsoft.Extensions.WebEncoders.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Net.Http.Headers, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.Headers.2.2.0\lib\netstandard2.0\Microsoft.Net.Http.Headers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Registry, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Registry.4.5.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json.Bson, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.Bson.1.0.1\lib\net45\Newtonsoft.Json.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.5.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.5.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Memory, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.1\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.1\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.0.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Security.AccessControl, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.4.5.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Xml, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Xml.4.5.0\lib\net461\System.Security.Cryptography.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Permissions.4.5.0\lib\net461\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.4.5.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.4.5.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.1\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -118,11 +300,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="App_Start\BundleConfig2.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\NHAPController.cs" />
+    <Compile Include="Areas\Admin\Controllers\QuanTriController.cs" />
     <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -131,56 +314,59 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ADMIN.cs">
-      <DependentUpon>QlBanHang.tt</DependentUpon>
+      <DependentUpon>QLBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CHAT.cs">
-      <DependentUpon>QlBanHang.tt</DependentUpon>
+      <DependentUpon>QLBanHang.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\CHITIETKHUYENMAI.cs">
-      <DependentUpon>QlBanHang.tt</DependentUpon>
+    <Compile Include="Models\CHITIETGH.cs">
+      <DependentUpon>QLBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DANHMUC.cs">
-      <DependentUpon>QlBanHang.tt</DependentUpon>
+      <DependentUpon>QLBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\GIOHANG.cs">
-      <DependentUpon>QlBanHang.tt</DependentUpon>
+      <DependentUpon>QLBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\GioHangController.cs" />
     <Compile Include="Models\HOADON.cs">
-      <DependentUpon>QlBanHang.tt</DependentUpon>
+      <DependentUpon>QLBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\KHACHHANG.cs">
-      <DependentUpon>QlBanHang.tt</DependentUpon>
+      <DependentUpon>QLBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\KHUYENMAI.cs">
-      <DependentUpon>QlBanHang.tt</DependentUpon>
+      <DependentUpon>QLBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\LIENHE.cs">
-      <DependentUpon>QlBanHang.tt</DependentUpon>
+      <DependentUpon>QLBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\LOAISANPHAM.cs">
-      <DependentUpon>QlBanHang.tt</DependentUpon>
+      <DependentUpon>QLBanHang.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\QlBanHang.Context.cs">
+    <Compile Include="Models\QLBanHang.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>QlBanHang.Context.tt</DependentUpon>
+      <DependentUpon>QLBanHang.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\QlBanHang.cs">
+    <Compile Include="Models\QLBanHang.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>QlBanHang.tt</DependentUpon>
+      <DependentUpon>QLBanHang.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\QlBanHang.Designer.cs">
+    <Compile Include="Models\QLBanHang.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>QlBanHang.edmx</DependentUpon>
+      <DependentUpon>QLBanHang.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\SANPHAM.cs">
-      <DependentUpon>QlBanHang.tt</DependentUpon>
+      <DependentUpon>QLBanHang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>QLBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\THANHTOAN.cs">
-      <DependentUpon>QlBanHang.tt</DependentUpon>
+      <DependentUpon>QLBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -189,26 +375,55 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\app.min.css" />
     <Content Include="Content\css\bootstrap-grid.css" />
     <Content Include="Content\css\bootstrap-grid.min.css" />
     <Content Include="Content\css\bootstrap-reboot.css" />
     <Content Include="Content\css\bootstrap-reboot.min.css" />
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\css-1.css" />
+    <Content Include="Content\css\css.css" />
     <Content Include="Content\css\font-awesome.min.css" />
+    <Content Include="Content\css\icons.min.css" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\css\style.min.css" />
     <Content Include="Content\css\stylelogin.css" />
     <Content Include="Content\images\AutoDesk Main banner-89472.png" />
+    <Content Include="Content\images\bg.jpg" />
+    <Content Include="Content\images\cancel.svg" />
     <Content Include="Content\images\data siêu tốc-76618.png" />
+    <Content Include="Content\images\favicon.ico" />
+    <Content Include="Content\images\flags\french.jpg" />
+    <Content Include="Content\images\flags\italy.jpg" />
+    <Content Include="Content\images\flags\russia.jpg" />
+    <Content Include="Content\images\flags\spain.jpg" />
+    <Content Include="Content\images\flags\us.jpg" />
     <Content Include="Content\images\học tập phát triển-95166-17706.png" />
+    <Content Include="Content\images\layouts\dark.png" />
+    <Content Include="Content\images\layouts\light.png" />
+    <Content Include="Content\images\layouts\rtl.png" />
+    <Content Include="Content\images\logo-dark.png" />
+    <Content Include="Content\images\logo-light.png" />
+    <Content Include="Content\images\logo-sm.png" />
     <Content Include="Content\images\netflix-49596.png" />
+    <Content Include="Content\images\success.svg" />
+    <Content Include="Content\images\users\avatar-1.jpg" />
+    <Content Include="Content\images\users\avatar-2.jpg" />
+    <Content Include="Content\images\users\avatar-3.jpg" />
+    <Content Include="Content\images\users\avatar-4.jpg" />
+    <Content Include="Content\images\users\avatar-5.jpg" />
+    <Content Include="Content\images\users\avatar-6.jpg" />
+    <Content Include="Content\images\warming.svg" />
     <Content Include="Content\imgweb\7dtd.jpg" />
     <Content Include="Content\imgweb\assassin.jpg" />
     <Content Include="Content\imgweb\Autodesk-1-Nam.jpg" />
     <Content Include="Content\imgweb\backgroi.jpg" />
     <Content Include="Content\imgweb\backgrou.jpg" />
     <Content Include="Content\imgweb\bf4.jpg" />
+    <Content Include="Content\imgweb\Calm1nam.jpg" />
+    <Content Include="Content\imgweb\cb.jpg" />
+    <Content Include="Content\imgweb\cv1thang.jpg" />
     <Content Include="Content\imgweb\DeveloperPack.jpg" />
     <Content Include="Content\imgweb\devil.jpg" />
     <Content Include="Content\imgweb\DiscordNitro1Nam.jpg" />
@@ -227,6 +442,7 @@
     <Content Include="Content\imgweb\GTA.jpg" />
     <Content Include="Content\imgweb\herosiege.jpg" />
     <Content Include="Content\imgweb\iTunes5.jpg" />
+    <Content Include="Content\imgweb\lastpass.jpg" />
     <Content Include="Content\imgweb\LastPassPremium1Nam.jpg" />
     <Content Include="Content\imgweb\LinkedinPremium.jpg" />
     <Content Include="Content\imgweb\lumosity.jpg" />
@@ -236,6 +452,7 @@
     <Content Include="Content\imgweb\napcham50.jpg" />
     <Content Include="Content\imgweb\netflix1thang.jpg" />
     <Content Include="Content\imgweb\pacify.jpg" />
+    <Content Include="Content\imgweb\raiden.jpg" />
     <Content Include="Content\imgweb\RandomCodeSteam.jpg" />
     <Content Include="Content\imgweb\RandomCodeSteam5s.jpg" />
     <Content Include="Content\imgweb\ShopCanva-1-Nam.jpg" />
@@ -250,8 +467,90 @@
     <Content Include="Content\imgweb\Windows11Pro.jpg" />
     <Content Include="Content\imgweb\XBox15.jpg" />
     <Content Include="Content\imgweb\YOUTUBE-NO-ADS1NAD.jpg" />
+    <Content Include="Content\imgweb\youtube2thang.jpg" />
     <Content Include="Content\imgweb\ZoomPro1thang.jpg" />
+    <Content Include="Content\js\app.min.js" />
     <Content Include="Content\js\main.js" />
+    <Content Include="Content\js\pages\calendar.init.js" />
+    <Content Include="Content\js\pages\dashboard.init.js" />
+    <Content Include="Content\js\pages\datatables.init.js" />
+    <Content Include="Content\js\pages\flot.init.js" />
+    <Content Include="Content\js\pages\form-advanced.init.js" />
+    <Content Include="Content\js\pages\google-maps.init.js" />
+    <Content Include="Content\js\pages\morris.init.js" />
+    <Content Include="Content\js\pages\range-sliders.init.js" />
+    <Content Include="Content\js\pages\sweet-alerts.init.js" />
+    <Content Include="Content\js\pages\vector-maps.init.js" />
+    <Content Include="Content\js\vendor.min.js" />
+    <Content Include="Content\jvloginjavascrip.js" />
+    <Content Include="Content\libs\bootstrap-colorpicker\bootstrap-colorpicker.min.css" />
+    <Content Include="Content\libs\bootstrap-colorpicker\bootstrap-colorpicker.min.js" />
+    <Content Include="Content\libs\bootstrap-datepicker\bootstrap-datepicker.css" />
+    <Content Include="Content\libs\bootstrap-datepicker\bootstrap-datepicker.min.js" />
+    <Content Include="Content\libs\bootstrap-daterangepicker\daterangepicker.css" />
+    <Content Include="Content\libs\bootstrap-daterangepicker\daterangepicker.js" />
+    <Content Include="Content\libs\bootstrap-filestyle2\bootstrap-filestyle.min.js" />
+    <Content Include="Content\libs\bootstrap-tagsinput\bootstrap-tagsinput.css" />
+    <Content Include="Content\libs\bootstrap-tagsinput\bootstrap-tagsinput.min.js" />
+    <Content Include="Content\libs\bootstrap-timepicker\bootstrap-timepicker.min.css" />
+    <Content Include="Content\libs\bootstrap-timepicker\bootstrap-timepicker.min.js" />
+    <Content Include="Content\libs\clockpicker\bootstrap-clockpicker.min.css" />
+    <Content Include="Content\libs\clockpicker\bootstrap-clockpicker.min.js" />
+    <Content Include="Content\libs\datatables\buttons.bootstrap4.css" />
+    <Content Include="Content\libs\datatables\buttons.bootstrap4.min.js" />
+    <Content Include="Content\libs\datatables\buttons.html5.min.js" />
+    <Content Include="Content\libs\datatables\buttons.print.min.js" />
+    <Content Include="Content\libs\datatables\dataTables.bootstrap4.css" />
+    <Content Include="Content\libs\datatables\dataTables.bootstrap4.min.js" />
+    <Content Include="Content\libs\datatables\dataTables.buttons.min.js" />
+    <Content Include="Content\libs\datatables\dataTables.keyTable.min.js" />
+    <Content Include="Content\libs\datatables\dataTables.responsive.min.js" />
+    <Content Include="Content\libs\datatables\dataTables.select.min.js" />
+    <Content Include="Content\libs\datatables\jquery.dataTables.min.js" />
+    <Content Include="Content\libs\datatables\responsive.bootstrap4.css" />
+    <Content Include="Content\libs\datatables\responsive.bootstrap4.min.js" />
+    <Content Include="Content\libs\datatables\select.bootstrap4.css" />
+    <Content Include="Content\libs\flot-charts\jquery.flot.axislabels.js" />
+    <Content Include="Content\libs\flot-charts\jquery.flot.crosshair.js" />
+    <Content Include="Content\libs\flot-charts\jquery.flot.js" />
+    <Content Include="Content\libs\flot-charts\jquery.flot.orderBars.js" />
+    <Content Include="Content\libs\flot-charts\jquery.flot.pie.js" />
+    <Content Include="Content\libs\flot-charts\jquery.flot.resize.js" />
+    <Content Include="Content\libs\flot-charts\jquery.flot.selection.js" />
+    <Content Include="Content\libs\flot-charts\jquery.flot.stack.js" />
+    <Content Include="Content\libs\flot-charts\jquery.flot.time.js" />
+    <Content Include="Content\libs\flot-charts\jquery.flot.tooltip.min.js" />
+    <Content Include="Content\libs\fullcalendar\fullcalendar.min.css" />
+    <Content Include="Content\libs\fullcalendar\fullcalendar.min.js" />
+    <Content Include="Content\libs\gmaps\gmaps.min.js" />
+    <Content Include="Content\libs\ion-rangeslider\ion.rangeSlider.css" />
+    <Content Include="Content\libs\ion-rangeslider\ion.rangeSlider.min.js" />
+    <Content Include="Content\libs\jquery-knob\jquery.knob.min.js" />
+    <Content Include="Content\libs\jquery-ui\jquery-ui.min.js" />
+    <Content Include="Content\libs\jquery-vectormap\jquery-jvectormap-1.2.2.css" />
+    <Content Include="Content\libs\jquery-vectormap\jquery-jvectormap-1.2.2.min.js" />
+    <Content Include="Content\libs\jquery-vectormap\jquery-jvectormap-au-mill-en.js" />
+    <Content Include="Content\libs\jquery-vectormap\jquery-jvectormap-ca-lcc-en.js" />
+    <Content Include="Content\libs\jquery-vectormap\jquery-jvectormap-in-mill-en.js" />
+    <Content Include="Content\libs\jquery-vectormap\jquery-jvectormap-uk-mill-en.js" />
+    <Content Include="Content\libs\jquery-vectormap\jquery-jvectormap-us-il-chicago-mill-en.js" />
+    <Content Include="Content\libs\jquery-vectormap\jquery-jvectormap-us-merc-en.js" />
+    <Content Include="Content\libs\jquery-vectormap\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="Content\libs\jszip\jszip.min.js" />
+    <Content Include="Content\libs\moment\moment.min.js" />
+    <Content Include="Content\libs\morris-js\morris.min.js" />
+    <Content Include="Content\libs\parsleyjs\parsley.min.js" />
+    <Content Include="Content\libs\pdfmake\pdfmake.min.js" />
+    <Content Include="Content\libs\pdfmake\vfs_fonts.js" />
+    <Content Include="Content\libs\raphael\raphael.min.js" />
+    <Content Include="Content\libs\select2\select2.min.css" />
+    <Content Include="Content\libs\select2\select2.min.js" />
+    <Content Include="Content\libs\summernote\summernote-bs4.css" />
+    <Content Include="Content\libs\summernote\summernote-bs4.min.js" />
+    <Content Include="Content\libs\sweetalert2\sweetalert2.min.css" />
+    <Content Include="Content\libs\sweetalert2\sweetalert2.min.js" />
+    <Content Include="Content\libs\switchery\switchery.min.css" />
+    <Content Include="Content\libs\switchery\switchery.min.js" />
     <Content Include="Content\lib\animate\animate.min.css" />
     <Content Include="Content\lib\easing\easing.js" />
     <Content Include="Content\lib\easing\easing.min.js" />
@@ -268,6 +567,7 @@
     <Content Include="Content\Loginadmincss.css" />
     <Content Include="Content\mail\contact.js" />
     <Content Include="Content\mail\jqBootstrapValidation.min.js" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\styledangky.css" />
     <Content Include="Content\Stylelogin2.css" />
@@ -366,15 +666,15 @@
     <Content Include="Content\scss\bootstrap\scss\_utilities.scss" />
     <Content Include="Content\scss\bootstrap\scss\_variables.scss" />
     <Content Include="Content\scss\style.scss" />
-    <Content Include="Models\QlBanHang.Context.tt">
+    <Content Include="Models\QLBanHang.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QlBanHang.edmx</DependentUpon>
-      <LastGenOutput>QlBanHang.Context.cs</LastGenOutput>
+      <DependentUpon>QLBanHang.edmx</DependentUpon>
+      <LastGenOutput>QLBanHang.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\QlBanHang.tt">
+    <Content Include="Models\QLBanHang.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QlBanHang.edmx</DependentUpon>
-      <LastGenOutput>QlBanHang.cs</LastGenOutput>
+      <DependentUpon>QLBanHang.edmx</DependentUpon>
+      <LastGenOutput>QLBanHang.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -383,15 +683,34 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\lib\owlcarousel\LICENSE" />
-    <EntityDeploy Include="Models\QlBanHang.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>QlBanHang.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\QlBanHang.edmx.diagram">
-      <DependentUpon>QlBanHang.edmx</DependentUpon>
-    </Content>
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\Home\Login.cshtml" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\luachon.cshtml" />
+    <Content Include="Areas\Admin\Views\QuanTri\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\QuanTri\Index.cshtml" />
+    <Content Include="Content\css\s\hind\v11\5aU19_a8oxmIfJpbERySiA.ttf" />
+    <Content Include="Content\css\s\hind\v11\5aU19_a8oxmIfLZcERySiA.ttf" />
+    <Content Include="Content\css\s\notosans\v11\o-0IIpQlx3QUlC5A4PNr5TRF.ttf" />
+    <Content Include="Content\css\s\notosans\v11\o-0NIpQlx3QUlC5A4PNjXhFVZNyE.ttf" />
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\QuanTri\Quanlinguoidung.cshtml" />
+    <Content Include="Areas\Admin\Views\QuanTri\Quanlidanhmuc.cshtml" />
+    <Content Include="Areas\Admin\Views\QuanTri\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\QuanTri\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\QuanTri\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\NHAP\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\NHAP\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\NHAP\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\NHAP\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\NHAP\Index.cshtml" />
+    <EntityDeploy Include="Models\QLBanHang.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QLBanHang.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\QLBanHang.edmx.diagram">
+      <DependentUpon>QLBanHang.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -429,6 +748,7 @@
     <Content Include="Views\Home\Sanphammoi.cshtml" />
     <Content Include="Views\GioHang\GioHangPartial.cshtml" />
     <Content Include="Views\GioHang\GioHang.cshtml" />
+    <Content Include="Views\Shared\_Layoutadmin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -481,7 +801,10 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
   </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

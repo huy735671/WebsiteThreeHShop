@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebsiteThreeHShop.Models;
+using PagedList;
+using PagedList.Mvc;
 
 namespace WebsiteThreeHShop.Controllers
 {
@@ -20,11 +23,14 @@ namespace WebsiteThreeHShop.Controllers
         {
             return View();
         }
-        public ActionResult Danhmuc(int id)
+        public ActionResult Danhmuc(int id, int? page)
         {
             /* var sanpham = data.SANPHAMs.Where(n => n.MADM == 1).Take(50).ToList();*/
-            var sanpham = from s in data.SANPHAMs where s.MADM == id select s;
-            return View(sanpham);
+            ViewBag.MADM = id;
+            int isize = 9;
+            var ipageNum = (page ?? 1);
+            var sanpham = from s in data.SANPHAMs where s.MADM == id orderby s.MADM select s;
+            return View(sanpham.ToPagedList(ipageNum, isize));
         }
 
         public ActionResult DanhmucPartial()

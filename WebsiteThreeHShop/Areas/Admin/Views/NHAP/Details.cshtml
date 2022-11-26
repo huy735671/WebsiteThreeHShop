@@ -1,0 +1,67 @@
+﻿@model WebsiteThreeHShop.Models.SANPHAM
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layoutadmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SANPHAM</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TENSP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TENSP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOIDUNGTT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOIDUNGTT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GIACA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GIACA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HINHMINHHOA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HINHMINHHOA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DANHMUC.TENDM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DANHMUC.TENDM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LOAISANPHAM.TENLSP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LOAISANPHAM.TENLSP)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MASP }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

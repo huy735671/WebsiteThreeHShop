@@ -18,6 +18,7 @@ namespace WebsiteThreeHShop.Models
         public KHACHHANG()
         {
             this.CHATs = new HashSet<CHAT>();
+            this.GIOHANGs = new HashSet<GIOHANG>();
             this.HOADONs = new HashSet<HOADON>();
             this.THANHTOANs = new HashSet<THANHTOAN>();
         }
@@ -30,11 +31,13 @@ namespace WebsiteThreeHShop.Models
         public string PASSWORD { get; set; }
         public string PHONE { get; set; }
         public string AVATAR { get; set; }
-        public System.DateTime TUOI { get; set; }
+        public Nullable<System.DateTime> TUOI { get; set; }
         public string GIOITINH { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CHAT> CHATs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<GIOHANG> GIOHANGs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HOADON> HOADONs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

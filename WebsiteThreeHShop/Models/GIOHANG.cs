@@ -17,15 +17,16 @@ namespace WebsiteThreeHShop.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public GIOHANG()
         {
-            this.THANHTOANs = new HashSet<THANHTOAN>();
+            this.CHITIETGHs = new HashSet<CHITIETGH>();
         }
     
         public int MAGH { get; set; }
-        public int MASP { get; set; }
-        public int SOLUONG { get; set; }
+        public int MAKH { get; set; }
+        public Nullable<int> IDKM { get; set; }
     
-        public virtual SANPHAM SANPHAM { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<THANHTOAN> THANHTOANs { get; set; }
+        public virtual ICollection<CHITIETGH> CHITIETGHs { get; set; }
+        public virtual KHACHHANG KHACHHANG { get; set; }
+        public virtual KHUYENMAI KHUYENMAI { get; set; }
     }
 }

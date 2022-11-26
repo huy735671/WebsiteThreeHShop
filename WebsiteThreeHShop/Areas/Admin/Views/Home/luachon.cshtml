@@ -1,0 +1,121 @@
+﻿@using WebsiteThreeHShop.Models;
+@{
+    ADMIN ad = (ADMIN)Session["Admin"];
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Dashboard | Simple - Responsive Bootstrap 4 Admin Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Responsive bootstrap 4 admin template" name="description">
+    <meta content="Coderthemes" name="author">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="~/Content/images/favicon.ico">
+    <!-- App css -->
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap-stylesheet">
+    <link href="~/Content/css/icons.min.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/css/app.min.css" rel="stylesheet" type="text/css" id="app-stylesheet">
+
+</head>
+
+<body>
+    <div class="left-side-menu">
+
+
+        <div class="user-box">
+            <div class="float-left">
+                <img src="~/Content/images/học tập phát triển-95166-17706.png" alt="" class="avatar-md rounded-circle">
+            </div>
+            <div class="user-info">
+                @if (Session["Admin"] != null)
+                {
+                    <a href="#">@ad.TEN</a>
+                    <p class="text-muted m-0">Administrator</p>
+                    <a href="#">Đăng xuất</a>
+                }
+                else
+                {
+                    <a href="@Url.Action("Login","Home")">Đăng nhập</a>
+
+                }
+
+            </div>
+        </div>
+
+        <!--- Sidemenu -->
+        <div id="sidebar-menu">
+
+            <ul class="metismenu" id="side-menu">
+
+                <li class="menu-title">Danh mục</li>
+
+                <li>
+                    <a href="@Url.Action("Index","Quantri")">
+                        <i class="ti-home"></i>
+                        <span> Quản lý sản phẩm </span>
+                    </a>
+                </li>
+
+
+
+                <li>
+                    <a href="@Url.Action("Quanlinguoidung","Quantri")">
+                        <i class="ti-light-bulb"></i>
+                        <span> Quản lý người dùng </span>
+
+                    </a>
+                </li>
+
+                <li>
+                    <a href="@Url.Action("Quanlidanhmuc","Quantri")">
+                        <i class="ti-spray"></i>
+                        <span> Quản lý danh mục </span>
+                    </a>
+                </li>
+                @*   <li>
+            <a href="@Url.Action("Hopthulienhe","Quantri")">
+                <i class="ti-pencil-alt"></i>
+                <span>  Hộp thư liên hệ </span>
+
+            </a>
+        </li>*@
+                <li>
+                    <a href="javascript: void(0);">
+                        <i class="ti-pencil-alt"></i>
+                        <span>  Quản lý khuyến mãi </span>
+
+                    </a>
+                </li>
+
+            </ul>
+
+
+
+
+
+
+
+
+</div>
+        <!-- End Sidebar -->
+
+        <div class="clearfix"></div>
+
+
+    </div>
+    <script src="~/Content/js/vendor.min.js"></script>
+
+    <script src="~/Content/libs/morris-js/morris.min.js"></script>
+    <script src="~/Content/libs/raphael/raphael.min.js"></script>
+
+    <script src="~/Content/js/pages/dashboard.init.js"></script>
+
+    <!-- App js -->
+    <script src="~/Content/js/app.min.js"></script>
+
+</body>
+
+</html>

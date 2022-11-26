@@ -20,14 +20,18 @@ namespace WebsiteThreeHShop.Models
             get { return iSOLUONG * dGIACA; }
         }
 
-        public GioHang(int msp)
+        public GioHang(int magh, int msp)
         {
             iMASP = msp;
-            SANPHAM sp = data.SANPHAMs.Single(n => n.MASP == iMASP);
+            SANPHAM sp = data.SANPHAMs.FirstOrDefault(n => n.MASP == iMASP);
             sTENSP = sp.TENSP;
             sHINHMINHHOA = sp.HINHMINHHOA;
             dGIACA = double.Parse(sp.GIACA.ToString());
-            iSOLUONG = 1;
+            var ct = data.CHITIETGHs.FirstOrDefault(c => c.MAGH == magh && c.MASP == msp);
+            if (ct == null)
+                iSOLUONG = 1;
+            else
+                iSOLUONG = Convert.ToInt32( ct.SOLUONG);
         }
         public class GioHangController : Controller
         {

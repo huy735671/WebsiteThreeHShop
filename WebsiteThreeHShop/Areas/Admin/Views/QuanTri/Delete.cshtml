@@ -1,0 +1,70 @@
+﻿@model WebsiteThreeHShop.Models.SANPHAM
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layoutadmin.cshtml";
+}
+
+<style type="text/css">
+    img {
+        width: 200px;
+        margin-bottom: 20px;
+    }
+
+    h3, h4 {
+        color: red;
+        font-weight: bold;
+    }
+</style>
+<h2> XÁC NHẬN THÔNG TIN CẦN XÓA</h2>
+
+<h4>@Html.Raw(ViewBag.ThongBao)</h4>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên sách:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TENSP)
+        </dd>
+        <dt>
+            Mô tả:
+        </dt>
+        <dd>
+            @Html.Raw(@Model.NOIDUNGTT.ToString().Replace("\n", "</p><p>&nbsp&nbsp&nbsp&nbsp&nbsp"))
+        </dd>
+        <dt>
+            Ảnh bìa:
+        </dt>
+        <dd>
+            <img src="~/Content/imgweb/@Model.HINHMINHHOA" alt="">
+        </dd>
+        <dt>
+            Giá bán:
+        </dt>
+        <dd>
+            @Html.FormatValue(@Model.GIACA, "{0:#,##0}") VNĐ
+        </dd>
+        <dt>
+            Danh mục:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DANHMUC.TENDM)
+        </dd>
+        <dt>
+            Thời hạn:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LOAISANPHAM.TENLSP)
+        </dd>
+    </dl>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-actions no-color">
+            <input type="submit" value="XÓA" class="btn btn-info" /> |
+            @Html.ActionLink("VỀ TRANG QUẢN LÝ SÁCH", "Index")
+        </div>
+    }
+</div>

@@ -4,30 +4,32 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="e4548aa2671f4b86ab5cdeeac3d8b291" Name="Diagram1">
-        <EntityTypeShape EntityType="QUANLYBANHANGModel.ADMIN" Width="1.5" PointX="5.25" PointY="13.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="QUANLYBANHANGModel.CHAT" Width="1.5" PointX="7.5" PointY="9.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="QUANLYBANHANGModel.CHITIETKHUYENMAI" Width="1.5" PointX="5.25" PointY="2.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="QUANLYBANHANGModel.DANHMUC" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="QUANLYBANHANGModel.GIOHANG" Width="1.5" PointX="5.25" PointY="6.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="QUANLYBANHANGModel.HOADON" Width="1.5" PointX="10.5" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="QUANLYBANHANGModel.KHACHHANG" Width="1.5" PointX="5.25" PointY="9.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="QUANLYBANHANGModel.KHUYENMAI" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="QUANLYBANHANGModel.LIENHE" Width="1.5" PointX="7.75" PointY="1.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="QUANLYBANHANGModel.LOAISANPHAM" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="QUANLYBANHANGModel.SANPHAM" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
-        <EntityTypeShape EntityType="QUANLYBANHANGModel.THANHTOAN" Width="1.5" PointX="7.5" PointY="5.75" IsExpanded="true" />
-        <AssociationConnector Association="QUANLYBANHANGModel.FK__CHAT__MAAD__3C69FB99" ManuallyRouted="false" />
-        <AssociationConnector Association="QUANLYBANHANGModel.FK__HOADON__MAADM__44FF419A" ManuallyRouted="false" />
-        <AssociationConnector Association="QUANLYBANHANGModel.FK__CHAT__MAKH__3B75D760" ManuallyRouted="false" />
-        <AssociationConnector Association="QUANLYBANHANGModel.FK__CHITIETKHU__MAKM__4222D4EF" ManuallyRouted="false" />
-        <AssociationConnector Association="QUANLYBANHANGModel.FK__CHITIETKHU__MASP__412EB0B6" ManuallyRouted="false" />
-        <AssociationConnector Association="QUANLYBANHANGModel.FK__SANPHAM__MADM__2E1BDC42" ManuallyRouted="false" />
-        <AssociationConnector Association="QUANLYBANHANGModel.FK__GIOHANG__MASP__30F848ED" ManuallyRouted="false" />
-        <AssociationConnector Association="QUANLYBANHANGModel.FK__THANHTOAN__MAGH__33D4B598" ManuallyRouted="false" />
-        <AssociationConnector Association="QUANLYBANHANGModel.FK__HOADON__MAKH__45F365D3" ManuallyRouted="false" />
-        <AssociationConnector Association="QUANLYBANHANGModel.FK__THANHTOAN__MAKH__34C8D9D1" ManuallyRouted="false" />
-        <AssociationConnector Association="QUANLYBANHANGModel.FK__SANPHAM__MALSP__2D27B809" ManuallyRouted="false" />
+      <Diagram DiagramId="1a8d2437968a4c6d952f9e8531ec7947" Name="Diagram1">
+        <EntityTypeShape EntityType="dbbanhangModel.ADMIN" Width="1.5" PointX="0.75" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbbanhangModel.CHAT" Width="1.5" PointX="3" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbbanhangModel.CHITIETGH" Width="1.5" PointX="5.25" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbbanhangModel.DANHMUC" Width="1.5" PointX="0.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbbanhangModel.GIOHANG" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbbanhangModel.HOADON" Width="1.5" PointX="6" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbbanhangModel.KHACHHANG" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbbanhangModel.KHUYENMAI" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbbanhangModel.LIENHE" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbbanhangModel.LOAISANPHAM" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbbanhangModel.SANPHAM" Width="1.5" PointX="3" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbbanhangModel.sysdiagram" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbbanhangModel.THANHTOAN" Width="1.5" PointX="3" PointY="15.375" IsExpanded="true" />
+        <AssociationConnector Association="dbbanhangModel.FK__CHAT__MAAD__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="dbbanhangModel.FK__HOADON__MAADM__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="dbbanhangModel.FK__CHAT__MAKH__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="dbbanhangModel.FK_CHITIETGH_GIOHANG" ManuallyRouted="false" />
+        <AssociationConnector Association="dbbanhangModel.FK_CHITIETGH_SANPHAM" ManuallyRouted="false" />
+        <AssociationConnector Association="dbbanhangModel.FK__SANPHAM__MADM__2D27B809" ManuallyRouted="false" />
+        <AssociationConnector Association="dbbanhangModel.FK_GIOHANG_KHACHHANG" ManuallyRouted="false" />
+        <AssociationConnector Association="dbbanhangModel.FK_GIOHANG_KHUYENMAI" ManuallyRouted="false" />
+        <AssociationConnector Association="dbbanhangModel.FK__HOADON__MAKH__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="dbbanhangModel.FK_HOADON_KHUYENMAI" ManuallyRouted="false" />
+        <AssociationConnector Association="dbbanhangModel.FK__THANHTOAN__MAKH__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="dbbanhangModel.FK__SANPHAM__MALSP__2C3393D0" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

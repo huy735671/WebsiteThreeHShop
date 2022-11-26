@@ -17,7 +17,8 @@ namespace WebsiteThreeHShop.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public KHUYENMAI()
         {
-            this.CHITIETKHUYENMAIs = new HashSet<CHITIETKHUYENMAI>();
+            this.GIOHANGs = new HashSet<GIOHANG>();
+            this.HOADONs = new HashSet<HOADON>();
         }
     
         public int ID { get; set; }
@@ -27,6 +28,8 @@ namespace WebsiteThreeHShop.Models
         public Nullable<double> PHANTRAMKHUYENMAI { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CHITIETKHUYENMAI> CHITIETKHUYENMAIs { get; set; }
+        public virtual ICollection<GIOHANG> GIOHANGs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HOADON> HOADONs { get; set; }
     }
 }

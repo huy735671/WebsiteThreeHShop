@@ -18,8 +18,13 @@ namespace WebsiteThreeHShop.Controllers
             return View();
         }
         QUANLYBANHANGEn data = new QUANLYBANHANGEn();
-
-
+       /* public ActionResult Logout()
+        {
+            Session["Taikhoankh"] = null;
+            return RedirectToAction("Index","Home");
+ 
+        }
+        */
         // GET: Users
         [HttpGet]
         public ActionResult Dangky()
@@ -59,8 +64,14 @@ namespace WebsiteThreeHShop.Controllers
                 kh.PHONE = sDienthoai;
 
                 data.KHACHHANGs.Add(kh);
+                
 
                 data.SaveChanges();
+                var gh = new GIOHANG();
+                gh.MAKH = kh.MAKH;
+                data.GIOHANGs.Add(gh);
+                data.SaveChanges();
+
                 return RedirectToAction("DangNhap");
             }
             return this.Dangky();
@@ -93,5 +104,6 @@ namespace WebsiteThreeHShop.Controllers
         {
             return PartialView("LoginLogout");
         }
+       
     }
 }

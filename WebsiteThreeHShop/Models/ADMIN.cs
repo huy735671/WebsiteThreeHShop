@@ -27,7 +27,7 @@ namespace WebsiteThreeHShop.Models
         public string USERNAME { get; set; }
         public string PASSWORD { get; set; }
         public string PHONE { get; set; }
-        public System.DateTime TUOI { get; set; }
+        public Nullable<System.DateTime> TUOI { get; set; }
         public string GIOITINH { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

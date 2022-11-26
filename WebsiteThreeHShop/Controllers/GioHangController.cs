@@ -15,9 +15,18 @@ namespace WebsiteThreeHShop.Controllers
         public List<GioHang> LayGioHang()
         {
             List<GioHang> lstGioHang = Session["GioHang"] as List<GioHang>;
+            KHACHHANG kh = (KHACHHANG)Session["TaiKhoan"];
+            var makh = kh.MAKH;
+            var magh = data.GIOHANGs.FirstOrDefault(gh => gh.MAKH == makh).MAGH;
             if (lstGioHang == null)
             {
                 lstGioHang = new List<GioHang>();
+                var ctgh = data.CHITIETGHs.Where(c => c.MAGH == magh).ToList();
+                foreach(CHITIETGH ct in ctgh)
+                {
+                    GioHang gh = new GioHang(magh, ct.MASP);
+                    lstGioHang.Add(gh);
+                }
                 Session["GioHang"] = lstGioHang;
             }
             return lstGioHang;
@@ -27,15 +36,30 @@ namespace WebsiteThreeHShop.Controllers
         public ActionResult ThemGioHang(int msp, string url)
         {
             List<GioHang> lstGioHang = LayGioHang();
+            KHACHHANG kh = (KHACHHANG) Session["TaiKhoan"];
+            var makh = kh.MAKH;
+            var magh = data.GIOHANGs.FirstOrDefault(gh => gh.MAKH == makh).MAGH;
             GioHang sp = lstGioHang.Find(n => n.iMASP == msp);
             if (sp == null)
             {
-                sp = new GioHang(msp);
+               
+                var ct = new CHITIETGH();
+
+                ct.MAGH = magh;
+                ct.MASP = msp;
+                ct.SOLUONG = 1;
+                data.CHITIETGHs.Add(ct);
+                data.SaveChanges();
+                sp = new GioHang(msp, magh);
                 lstGioHang.Add(sp);
             }
             else
             {
                 sp.iSOLUONG++;
+                var ct = data.CHITIETGHs.FirstOrDefault(c=> c.MAGH== magh && c.MASP== msp);
+                ct.SOLUONG = sp.iSOLUONG;
+                data.SaveChanges();
+                
             }
             return Redirect(url);
         }
@@ -86,9 +110,14 @@ namespace WebsiteThreeHShop.Controllers
             {
                 return RedirectToAction("Index", "Home");
             }*/
+            KHACHHANG kh = (KHACHHANG)Session["TaiKhoan"];
+            var makh = kh.MAKH;
+            var idkm= data.GIOHANGs.FirstOrDefault(g => g.MAKH == makh).IDKM;
+            var pt = data.KHUYENMAIs.FirstOrDefault(k => k.ID == idkm).PHANTRAMKHUYENMAI;
 
             ViewBag.TongSoLuong = TongSoLuong();
             ViewBag.TongTien = TongTien();
+            //ViewBag.TongTien = TongTien()*(1-pt);
             ViewBag.TongVAT = TongVAT();
             //Tinh tong tien = Tong tien sp + thue VAT(10%)
             ViewBag.TongTienVAT = TongTien() + TongVAT();
@@ -103,11 +132,19 @@ namespace WebsiteThreeHShop.Controllers
         //Xoa san pham khoi gio hang
         public ActionResult XoaSPKhoiGioHang(int iMASP)
         {
+            KHACHHANG kh = (KHACHHANG)Session["TaiKhoan"];
+            var makh = kh.MAKH;
+            var magh = data.GIOHANGs.FirstOrDefault(gh => gh.MAKH == makh).MAGH;
             List<GioHang> lstGioHang = LayGioHang();
             GioHang sp = lstGioHang.SingleOrDefault(n => n.iMASP == iMASP);
             if (sp != null)
             {
+                var ct = data.CHITIETGHs.FirstOrDefault(c=> c.MAGH == magh && c.MASP == iMASP);
+                data.CHITIETGHs.Remove(ct);
+                data.SaveChanges();
+
                 lstGioHang.RemoveAll(n => n.iMASP == iMASP);
+                
                 /*   if(lstGioHang.Count ==0)
                    {
                        return RedirectToAction("Index", "Home");
@@ -118,10 +155,16 @@ namespace WebsiteThreeHShop.Controllers
         //Cap nhat gio hang
         public ActionResult CapNhatGioHang(int iMASP, FormCollection f)
         {
+            KHACHHANG kh = (KHACHHANG)Session["TaiKhoan"];
+            var makh = kh.MAKH;
+            var magh = data.GIOHANGs.FirstOrDefault(gh => gh.MAKH == makh).MAGH;
             List<GioHang> lstGioHang = LayGioHang();
             GioHang sp = lstGioHang.SingleOrDefault(n => n.iMASP == iMASP);
             if (sp != null)
             {
+                var ct = data.CHITIETGHs.FirstOrDefault(c => c.MAGH == magh && c.MASP == iMASP);
+                ct.SOLUONG = int.Parse(f["txtSOLUONG"].ToString());
+                data.SaveChanges();
                 sp.iSOLUONG = int.Parse(f["txtSOLUONG"].ToString());
             }
             return RedirectToAction("GioHang");
@@ -140,21 +183,14 @@ namespace WebsiteThreeHShop.Controllers
         }
         public ActionResult khuyenmai1(FormCollection f)
         {
-            var magg = f["makhuyenmai"];
-            ViewBag.giamgia = TongTien();
+            var makm = f["makhuyenmai"];
+            KHACHHANG kh = (KHACHHANG)Session["TaiKhoan"];
+            var makh = kh.MAKH;
+            var gh = data.GIOHANGs.FirstOrDefault(g => g.MAKH == makh);
+            gh.IDKM = data.KHUYENMAIs.FirstOrDefault(km => km.MAKM == makm).ID;
+            data.SaveChanges();
 
-            foreach (var a in data.KHUYENMAIs)
-            {
-                if (String.Compare(a.MAKM, magg, false) < 0)
-                {
-                    ViewBag.thongbao = "Mã giảm giá không tồn tại";
-                }
-                if (String.Compare(a.MAKM, magg, false) == 0)
-                {
-                    ViewBag.TongTien = Convert.ToInt32(ViewBag.giamgia * a.PHANTRAMKHUYENMAI / 100);
 
-                }
-            }
             return RedirectToAction("GioHang");
         }
     }

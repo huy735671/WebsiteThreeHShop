@@ -13,7 +13,7 @@ namespace WebsiteThreeHShop.Areas.Admin.Controllers
 {
     public class HomeController : Controller
     {
-        QUANLYBANHANGEn dt=new QUANLYBANHANGEn();
+        QUANLYBANHANGEn dt = new QUANLYBANHANGEn();
         // GET: Admin/Home
         public ActionResult Index()
         {
@@ -43,6 +43,11 @@ namespace WebsiteThreeHShop.Areas.Admin.Controllers
             }
 
             return View();
+        }
+        public ActionResult luachon()
+        {
+
+            return PartialView();
         }
     }
 }

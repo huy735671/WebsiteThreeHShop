@@ -22,7 +22,6 @@ namespace WebsiteThreeHShop.Models
         public string PHUONGTHUCTHANHTOAN { get; set; }
         public System.DateTime NGAYTHANHTOAN { get; set; }
     
-        public virtual GIOHANG GIOHANG { get; set; }
         public virtual KHACHHANG KHACHHANG { get; set; }
     }
 }

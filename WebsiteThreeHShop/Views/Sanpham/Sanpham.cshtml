@@ -20,7 +20,7 @@
                     <div class="text-center py-4">
                         <a class="h6 text-decoration-none text-truncate" href="@Url.Action("Chitietsanpham", "Sanpham", new { id = sp.MASP })">@sp.TENSP</a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>@sp.GIACA</h5><h6 class="text-muted ml-2"><del>50.000VND</del></h6>
+                            <h5>@string.Format("{0:#,##0,0}", @sp.GIACA) VNĐ</h5><h6 class="text-muted ml-2"></h6>
                         </div>
                         <div class="d-flex align-items-center justify-content-center mb-1">
                             <small class="fa fa-star text-primary mr-1"></small>

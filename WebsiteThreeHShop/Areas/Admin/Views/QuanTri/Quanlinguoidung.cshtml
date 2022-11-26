@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewBag.Title = "Quanlinguoidung";
+    Layout = "~/Views/Shared/_Layoutadmin.cshtml";
+}
+
+@using WebsiteThreeHShop.Models;
+@using PagedList.Mvc;
+@model PagedList.PagedList<WebsiteThreeHShop.Models.KHACHHANG>
+
+
+@*<p>
+        @Html.ActionLink("Thêm mới", "Create")
+    </p>*@
+<table class="table">
+    <tr>
+        <td style="text-align: center; width: 140px">
+            Tên
+        </td>
+        <td style="text-align: center; width: 80px">
+            Gmail
+        </td>
+        <td style="text-align:center;width:100px">
+            Username
+        </td>
+        <td style="text-align:center;width:100px">
+            Password
+        </td>
+        <td style="text-align:center;width:100px">
+            Phone
+        </td>
+        <td style="text-align: center; width: 100px">
+            Giới tính
+        </td>
+        <td style="text-align: center; width: 100px">
+            Hình minh họa
+        </td>
+    </tr>
+    @foreach (var item in Model)
+        {
+            <tr>
+                <td style="text-align:center;width:100px">@item.NAME </td>
+                <td style="text-align: center; width: 100px">@item.GMAIL </td>
+                <td style="text-align: center; width: 100px">@item.USERNAME </td>
+                <td style="text-align: center; width: 120px">@item.PASSWORD </td>
+                <td style="text-align: center; width: 100px">@item.PHONE</td>
+                <td style="text-align: center; width: 100px">@item.GIOITINH </td>
+                <td style="text-align: center; width: 100px"><img src="~/Content/imgweb/@item.AVATAR" style="width:50px;" /></td>
+                <td>
+                    <a href="@Url.Action("Edit", new {id=item.MAKH})" class="btn btn-warning" role="button">Sửa</a>
+                    <a href="@Url.Action("Details", new {id=item.MAKH})" class="btn btn-danger" role="button">Xóa</a>
+                </td>
+            </tr>
+        }
+
+</table>
+<div class="col-12" style="text-align:center">
+    <div class="MenuTrang">
+        @Html.PagedListPager(Model, page => Url.Action("Quanlinguoidung", new { page = page }))
+    </div>
+    <style>
+        .MenuTrang {
+            display: inline-block;
+            text-align: center;
+        }
+
+            .MenuTrang a {
+                color: black;
+                float: left;
+                padding: 8px 16px;
+                text-decoration: none;
+            }
+
+                .MenuTrang a:hover:not(.active) {
+                    background-color: yellow;
+                    color: black;
+                    border-radius: 5px;
+                }
+    </style>
+</div>
